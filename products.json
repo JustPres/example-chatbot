@@ -1,0 +1,50 @@
+[
+  {
+    "id": "notebook",
+    "name": "Premium Notebook",
+    "description": "Hardcover dotted journal for work and study.",
+    "price": 14.99,
+    "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop",
+    "alt": "Notebook"
+  },
+  {
+    "id": "headphones",
+    "name": "Wireless Headphones",
+    "description": "Noise-isolating sound with 20-hour battery life.",
+    "price": 59.0,
+    "image": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1200&auto=format&fit=crop",
+    "alt": "Wireless Headphones"
+  },
+  {
+    "id": "speaker",
+    "name": "Smart Speaker",
+    "description": "Voice-controlled assistant for your home.",
+    "price": 79.99,
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1200&auto=format&fit=crop",
+    "alt": "Smart Speaker"
+  },
+  {
+    "id": "lamp",
+    "name": "Modern Desk Lamp",
+    "description": "Adjustable LED lamp with touch controls.",
+    "price": 29.5,
+    "image": "https://images.unsplash.com/photo-1526178613294-8b3b78a0e1c5?q=80&w=1200&auto=format&fit=crop",
+    "alt": "Desk Lamp"
+  },
+  {
+    "id": "backpack",
+    "name": "Everyday Backpack",
+    "description": "Water-resistant backpack for daily carry.",
+    "price": 45.0,
+    "image": "https://images.unsplash.com/photo-1511385348-a52b4a160dc2?q=80&w=1200&auto=format&fit=crop",
+    "alt": "Backpack"
+  },
+  {
+    "id": "mug",
+    "name": "Ceramic Coffee Mug",
+    "description": "Matte finish mug for your perfect brew.",
+    "price": 12.0,
+    "image": "https://images.unsplash.com/photo-1526167276992-1e6c5d4b4b19?q=80&w=1200&auto=format&fit=crop",
+    "alt": "Coffee Mug"
+  }
+]
