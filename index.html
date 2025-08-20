@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Simple Catalog Website</title>
@@ -9,150 +10,172 @@
     <!-- TailwindCSS via CDN (no build step) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            container: { center: true, padding: '1rem' },
-            colors: { brand: { DEFAULT: '#0ea5e9' } }
-          }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    container: { center: true, padding: '1rem' },
+                    colors: { brand: { DEFAULT: '#0ea5e9' } }
+                }
+            }
         }
-      }
     </script>
 
     <style>
-      html { scroll-behavior: smooth; }
-      /* Performance hint for images */
-      img { content-visibility: auto; }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Performance hint for images */
+        img {
+            content-visibility: auto;
+        }
     </style>
-  </head>
-  <body class="min-h-screen flex flex-col text-slate-800 bg-white">
+</head>
+
+<body class="min-h-screen flex flex-col text-slate-800 bg-white">
     <!-- Header / Navigation -->
     <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
-      <nav class="container max-w-6xl flex items-center justify-between py-3">
-        <a href="#home" class="text-lg font-semibold text-slate-900">Simple Catalog</a>
-        <ul class="flex items-center gap-6 text-sm">
-          <li><a href="#home" class="hover:text-brand">Home</a></li>
-          <li><a href="#catalog" class="hover:text-brand">Catalog</a></li>
-          <li><a href="#contact" class="hover:text-brand">Contact/About</a></li>
-        </ul>
-      </nav>
+        <nav class="container max-w-6xl flex items-center justify-between py-3">
+            <a href="#home" class="text-lg font-semibold text-slate-900">Simple Catalog</a>
+            <ul class="flex items-center gap-6 text-sm">
+                <li><a href="#home" class="hover:text-brand">Home</a></li>
+                <li><a href="#catalog" class="hover:text-brand">Catalog</a></li>
+                <li><a href="#contact" class="hover:text-brand">Contact/About</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="relative bg-gradient-to-br from-sky-50 to-white">
-      <div class="container max-w-6xl py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-slate-900">
-            Welcome to Simple Catalog
-          </h1>
-          <p class="mt-4 text-slate-600 text-lg">
-            Discover a curated selection of products presented in a clean and responsive layout.
-          </p>
-          <div class="mt-6 flex gap-3">
-            <a href="#catalog" class="inline-flex items-center px-5 py-3 rounded-md bg-brand text-white hover:bg-sky-600 transition">Browse Catalog</a>
-            <a href="#contact" class="inline-flex items-center px-5 py-3 rounded-md border border-slate-300 text-slate-700 hover:bg-slate-50 transition">Contact Us</a>
-          </div>
+        <div class="container max-w-6xl py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+            <div>
+                <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-slate-900">
+                    Welcome to Simple Catalog
+                </h1>
+                <p class="mt-4 text-slate-600 text-lg">
+                    Discover a curated selection of products presented in a clean and responsive layout.
+                </p>
+                <div class="mt-6 flex gap-3">
+                    <a href="#catalog"
+                        class="inline-flex items-center px-5 py-3 rounded-md bg-brand text-white hover:bg-sky-600 transition">Browse
+                        Catalog</a>
+                    <a href="#contact"
+                        class="inline-flex items-center px-5 py-3 rounded-md border border-slate-300 text-slate-700 hover:bg-slate-50 transition">Contact
+                        Us</a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-lg ring-1 ring-slate-200">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop"
+                        alt="Hero showcase" class="w-full h-full object-cover" loading="lazy" />
+                </div>
+            </div>
         </div>
-        <div class="relative">
-          <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-lg ring-1 ring-slate-200">
-            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop" alt="Hero showcase" class="w-full h-full object-cover" loading="lazy" />
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Catalog Section -->
     <section id="catalog" class="container max-w-6xl py-16">
-      <header class="mb-8">
-        <h2 class="text-2xl md:text-3xl font-semibold text-slate-900">Catalog</h2>
-        <p class="text-slate-600 mt-2">Explore our latest items. Hover to preview.</p>
-      </header>
+        <header class="mb-8">
+            <h2 class="text-2xl md:text-3xl font-semibold text-slate-900">Catalog</h2>
+            <p class="text-slate-600 mt-2">Explore our latest items. Hover to preview.</p>
+        </header>
 
-      <!-- Search / Filter + Sort -->
-      <div class="mb-6 grid gap-4 sm:grid-cols-2">
-        <div>
-          <label class="block text-sm text-slate-700 mb-2" for="searchInput">Search products</label>
-          <div class="relative">
-            <input id="searchInput" type="search" placeholder="Search by name or description..." class="w-full rounded-md border-slate-300 pr-10 focus:border-brand focus:ring-brand" />
-            <button type="button" id="clearSearch" aria-label="Clear search" class="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">✕</button>
-          </div>
+        <!-- Search / Filter + Sort -->
+        <div class="mb-6 grid gap-4 sm:grid-cols-2">
+            <div>
+                <label class="block text-sm text-slate-700 mb-2" for="searchInput">Search products</label>
+                <div class="relative">
+                    <input id="searchInput" type="search" placeholder="Search by name or description..."
+                        class="w-full rounded-md border-slate-300 pr-10 focus:border-brand focus:ring-brand" />
+                    <button type="button" id="clearSearch" aria-label="Clear search"
+                        class="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">✕</button>
+                </div>
+            </div>
+            <div>
+                <label class="block text-sm text-slate-700 mb-2" for="sortSelect">Sort</label>
+                <select id="sortSelect" class="w-full rounded-md border-slate-300 focus:border-brand focus:ring-brand">
+                    <option value="">Relevance (default)</option>
+                    <option value="price_asc">Price: Low to High</option>
+                    <option value="price_desc">Price: High to Low</option>
+                    <option value="name_asc">Name: A–Z</option>
+                    <option value="name_desc">Name: Z–A</option>
+                </select>
+            </div>
         </div>
-        <div>
-          <label class="block text-sm text-slate-700 mb-2" for="sortSelect">Sort</label>
-          <select id="sortSelect" class="w-full rounded-md border-slate-300 focus:border-brand focus:ring-brand">
-            <option value="">Relevance (default)</option>
-            <option value="price_asc">Price: Low to High</option>
-            <option value="price_desc">Price: High to Low</option>
-            <option value="name_asc">Name: A–Z</option>
-            <option value="name_desc">Name: Z–A</option>
-          </select>
-        </div>
-      </div>
 
-      <!-- Dynamic grid populated from products.json -->
-      <div id="productsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="col-span-full text-slate-500">Loading catalog...</div>
-      </div>
+        <!-- Dynamic grid populated from products.json -->
+        <div id="productsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="col-span-full text-slate-500">Loading catalog...</div>
+        </div>
     </section>
 
     <!-- Contact/About Section -->
     <section id="contact" class="bg-slate-50 border-t border-slate-200">
-      <div class="container max-w-6xl py-16 grid lg:grid-cols-2 gap-10">
-        <div>
-          <h2 class="text-2xl md:text-3xl font-semibold text-slate-900">Contact & About</h2>
-          <p class="mt-2 text-slate-600">We'd love to hear from you. Reach us via the form or the details below.</p>
-          <ul class="mt-6 space-y-2 text-slate-700">
-            <li><strong>Company:</strong> Simple Catalog Co.</li>
-            <li><strong>Email:</strong> hello@simplecatalog.example</li>
-            <li><strong>Phone:</strong> +1 (555) 123-4567</li>
-            <li><strong>Address:</strong> 123 Market Street, Springfield</li>
-          </ul>
-        </div>
+        <div class="container max-w-6xl py-16 grid lg:grid-cols-2 gap-10">
+            <div>
+                <h2 class="text-2xl md:text-3xl font-semibold text-slate-900">Contact & About</h2>
+                <p class="mt-2 text-slate-600">We'd love to hear from you. Reach us via the form or the details below.
+                </p>
+                <ul class="mt-6 space-y-2 text-slate-700">
+                    <li><strong>Company:</strong> Simple Catalog Co.</li>
+                    <li><strong>Email:</strong> hello@simplecatalog.example</li>
+                    <li><strong>Phone:</strong> +1 (555) 123-4567</li>
+                    <li><strong>Address:</strong> 123 Market Street, Springfield</li>
+                </ul>
+            </div>
 
-        <!-- Optional contact form -->
-        <form class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
-          <div class="grid sm:grid-cols-2 gap-4">
-            <label class="block text-sm">
-              <span class="text-slate-700">Name</span>
-              <input type="text" required class="mt-1 w-full rounded-md border-slate-300 focus:border-brand focus:ring-brand" placeholder="Jane Doe" />
-            </label>
-            <label class="block text-sm">
-              <span class="text-slate-700">Email</span>
-              <input type="email" required class="mt-1 w-full rounded-md border-slate-300 focus:border-brand focus:ring-brand" placeholder="jane@example.com" />
-            </label>
-          </div>
-          <label class="block text-sm mt-4">
-            <span class="text-slate-700">Message</span>
-            <textarea rows="4" class="mt-1 w-full rounded-md border-slate-300 focus:border-brand focus:ring-brand" placeholder="How can we help?"></textarea>
-          </label>
-          <button type="submit" class="mt-4 inline-flex items-center px-5 py-3 rounded-md bg-brand text-white hover:bg-sky-600 transition">Send</button>
-        </form>
-      </div>
+            <!-- Optional contact form -->
+            <form class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <label class="block text-sm">
+                        <span class="text-slate-700">Name</span>
+                        <input type="text" required
+                            class="mt-1 w-full rounded-md border-slate-300 focus:border-brand focus:ring-brand"
+                            placeholder="Jane Doe" />
+                    </label>
+                    <label class="block text-sm">
+                        <span class="text-slate-700">Email</span>
+                        <input type="email" required
+                            class="mt-1 w-full rounded-md border-slate-300 focus:border-brand focus:ring-brand"
+                            placeholder="jane@example.com" />
+                    </label>
+                </div>
+                <label class="block text-sm mt-4">
+                    <span class="text-slate-700">Message</span>
+                    <textarea rows="4"
+                        class="mt-1 w-full rounded-md border-slate-300 focus:border-brand focus:ring-brand"
+                        placeholder="How can we help?"></textarea>
+                </label>
+                <button type="submit"
+                    class="mt-4 inline-flex items-center px-5 py-3 rounded-md bg-brand text-white hover:bg-sky-600 transition">Send</button>
+            </form>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer class="border-t border-slate-200">
-      <div class="container max-w-6xl py-8 text-sm text-slate-600 flex flex-col md:flex-row items-center justify-between gap-3">
-        <p>&copy; <span id="year"></span> Simple Catalog Co. All rights reserved.</p>
-        <div class="flex gap-4">
-          <a href="#home" class="hover:text-brand">Back to top</a>
+        <div
+            class="container max-w-6xl py-8 text-sm text-slate-600 flex flex-col md:flex-row items-center justify-between gap-3">
+            <p>&copy; <span id="year"></span> Simple Catalog Co. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="#home" class="hover:text-brand">Back to top</a>
+            </div>
         </div>
-      </div>
     </footer>
 
     <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-      let PRODUCTS = [];
-      let CURRENT_SORT = '';
+        let PRODUCTS = [];
+        let CURRENT_SORT = '';
 
-      function renderProducts(items) {
-        const grid = document.getElementById('productsGrid');
-        if (!items || items.length === 0) {
-          grid.innerHTML = '<div class="col-span-full text-slate-600">No products found.</div>';
-          return;
-        }
-        grid.innerHTML = items.map(item => `
+        function renderProducts(items) {
+            const grid = document.getElementById('productsGrid');
+            if (!items || items.length === 0) {
+                grid.innerHTML = '<div class="col-span-full text-slate-600">No products found.</div>';
+                return;
+            }
+            grid.innerHTML = items.map(item => `
           <article class="group border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition">
             <div class="overflow-hidden">
               <img class="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105" src="${item.image}" alt="${item.alt || item.name}" loading="lazy" />
@@ -164,65 +187,76 @@
             </div>
           </article>
         `).join('');
-      }
-
-      function debounce(fn, delay = 200) {
-        let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), delay); };
-      }
-
-      function applyFilterAndSort() {
-        const input = document.getElementById('searchInput');
-        const q = (input.value || '').toLowerCase().trim();
-        let list = !q ? PRODUCTS : PRODUCTS.filter(p =>
-          (p.name && p.name.toLowerCase().includes(q)) ||
-          (p.description && p.description.toLowerCase().includes(q))
-        );
-
-        switch (CURRENT_SORT) {
-          case 'price_asc':
-            list = [...list].sort((a,b) => Number(a.price) - Number(b.price));
-            break;
-          case 'price_desc':
-            list = [...list].sort((a,b) => Number(b.price) - Number(a.price));
-            break;
-          case 'name_asc':
-            list = [...list].sort((a,b) => String(a.name).localeCompare(String(b.name)));
-            break;
-          case 'name_desc':
-            list = [...list].sort((a,b) => String(b.name).localeCompare(String(a.name)));
-            break;
         }
-        renderProducts(list);
-      }
 
-      function setupSearch() {
-        const input = document.getElementById('searchInput');
-        const clearBtn = document.getElementById('clearSearch');
-
-        input.addEventListener('input', debounce(applyFilterAndSort, 250));
-        clearBtn.addEventListener('click', () => { input.value = ''; applyFilterAndSort(); input.focus(); });
-      }
-
-      function setupSort() {
-        const select = document.getElementById('sortSelect');
-        select.addEventListener('change', () => { CURRENT_SORT = select.value; applyFilterAndSort(); });
-      }
-
-      async function loadProducts() {
-        try {
-          const res = await fetch('products.json', { cache: 'no-store' });
-          if (!res.ok) throw new Error('Failed to load products');
-          PRODUCTS = await res.json();
-          renderProducts(PRODUCTS);
-          setupSearch();
-          setupSort();
-        } catch (err) {
-          const grid = document.getElementById('productsGrid');
-          grid.innerHTML = '<div class="col-span-full text-slate-600">Unable to load catalog right now.</div>';
-          console.error(err);
+        function debounce(fn, delay = 200) {
+            let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), delay); };
         }
-      }
-      loadProducts();
+
+        function applyFilterAndSort() {
+            const input = document.getElementById('searchInput');
+            const q = (input.value || '').toLowerCase().trim();
+            let list = !q ? PRODUCTS : PRODUCTS.filter(p =>
+                (p.name && p.name.toLowerCase().includes(q)) ||
+                (p.description && p.description.toLowerCase().includes(q))
+            );
+
+            switch (CURRENT_SORT) {
+                case 'price_asc':
+                    list = [...list].sort((a, b) => Number(a.price) - Number(b.price));
+                    break;
+                case 'price_desc':
+                    list = [...list].sort((a, b) => Number(b.price) - Number(a.price));
+                    break;
+                case 'name_asc':
+                    list = [...list].sort((a, b) => String(a.name).localeCompare(String(b.name)));
+                    break;
+                case 'name_desc':
+                    list = [...list].sort((a, b) => String(b.name).localeCompare(String(a.name)));
+                    break;
+            }
+            renderProducts(list);
+        }
+
+        function setupSearch() {
+            const input = document.getElementById('searchInput');
+            const clearBtn = document.getElementById('clearSearch');
+
+            input.addEventListener('input', debounce(applyFilterAndSort, 250));
+            clearBtn.addEventListener('click', () => { input.value = ''; applyFilterAndSort(); input.focus(); });
+        }
+
+        function setupSort() {
+            const select = document.getElementById('sortSelect');
+            select.addEventListener('change', () => { CURRENT_SORT = select.value; applyFilterAndSort(); });
+        }
+
+        async function loadProducts() {
+            try {
+                const res = await fetch('products.json', { cache: 'no-store' });
+                if (!res.ok) throw new Error('Failed to load products');
+                PRODUCTS = await res.json();
+                renderProducts(PRODUCTS);
+                setupSearch();
+                setupSort();
+            } catch (err) {
+                const grid = document.getElementById('productsGrid');
+                grid.innerHTML = '<div class="col-span-full text-slate-600">Unable to load catalog right now.</div>';
+                console.error(err);
+            }
+        }
+        loadProducts();
     </script>
-  </body>
+    <script>
+        (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "YRhomNLALceYH41IGBe3B"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
+    </script>
+    <script type="text/javascript" id="botcopy-embedder-d7lcfheammjct" class="botcopy-embedder-d7lcfheammjct"
+        data-botId="68a490a33bbfcf0a469c7797">
+            var s = document.createElement('script');
+            s.type = 'text/javascript'; s.async = true;
+            s.src = 'https://widget.botcopy.com/js/injection.js';
+            document.getElementById('botcopy-embedder-d7lcfheammjct').appendChild(s);
+        </script>
+</body>
+
 </html>
