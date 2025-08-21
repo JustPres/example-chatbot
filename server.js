@@ -42,6 +42,21 @@ app.post("/webhook", async (req, res) => {
     }
 });
 
+app.get("/api/users", (req, res) => {
+    res.json([{ name: "Justine" }, { name: "Lopez" }]);
+});
+
+app.get("/api/products", (req, res) => {
+    res.json({
+        products: [{
+            name: "Notebook",
+            price: 14.99,
+            image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop",
+            alt: "Notebook"
+        }]
+    })
+})
+
 app.get("/", (req, res) => {
     res.send("API is running...");
 });
