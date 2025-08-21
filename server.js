@@ -57,6 +57,16 @@ app.get("/api/products", (req, res) => {
     })
 })
 
+if (intentName === "AvailableItems") {
+    const items = await collection.find({}).toArray();
+    if (items.length > 0) {
+        responseText = "Here are the available items: " + items.map(i => i.name).join(", ");
+    } else {
+        responseText = "No items available today.";
+    }
+}
+
+
 app.get("/", (req, res) => {
     res.send("API is running...");
 });
